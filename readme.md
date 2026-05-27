@@ -1,4 +1,15 @@
-# Anonymous SNN Code Version 1
+# Efficient Transformer Attention for SNNs via Hadamard Simplification (SSA / USSA)
+
+This repository contains the official implementation of our ICML 2026 paper:
+
+> **Efficient Transformer Attention for SNNs via Hadamard Simplification**  
+> Tingting Jiang, Jiangrong Shen, Long Chen, Yaxin Li, Qi Xu
+
+We propose **Simplified Spiking Attention (SSA)** and **Ultra-Simplified Spiking Attention (USSA)**, which replace dense matrix multiplication with Hadamard products, significantly reducing computational and communication complexity for Transformer-based SNNs on neuromorphic hardware.
+
+**Our work is built upon [SpikingResformer](https://github.com/xyshi2000/SpikingResformer) (Shi et al., CVPR 2024) as the baseline.** We inherit its overall architecture and training pipeline, while introducing hardware-friendly attention mechanisms to replace the original MDSSA module.
+
+---
 
 ## Installing Dependencies
 
@@ -54,21 +65,7 @@ python main.py \
     ;
 ```
 
-### Transfer Learning
-
-Run the following command to transfer the pretrained SpikingResformer-S to CIFAR10
-
-```bash
-python \
-main.py \
-    -c configs/transfer/cifar10.yaml \
-    --data-path /path/to/your/dataset \
-    --output-dir /path/to/your/output \
-    --transfer /path/to/your/checkpoint \
-    ;
-```
-
-Experimental setups on other datasets can be found in `configs/transfer`.
+Experimental setups on other datasets can befound in `configs`.
 
 ### Direct Training
 
@@ -88,10 +85,10 @@ Experimental setups on other datasets can be found in `configs/direct_training`.
 ## Citation
 
 ```bibtex
-@inproceedings{shi2024spikingresformer,
-    title={SpikingResformer: Bridging ResNet and Vision Transformer in Spiking Neural Networks}, 
-    author={Shi, Xinyu and Hao, Zecheng and Yu, Zhaofei},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    year={2024}
+@inproceedings{jiang2026efficient,
+    title={Efficient Transformer Attention for SNNs via Hadamard Simplification},
+    author={Jiang, Tingting and Shen, Jiangrong and Chen, Long and Li, Yaxin and Xu, Qi},
+    booktitle={International Conference on Machine Learning (ICML)},
+    year={2026}
 }
 ```

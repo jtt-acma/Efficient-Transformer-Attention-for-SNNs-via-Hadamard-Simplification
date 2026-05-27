@@ -1,0 +1,25 @@
+seed: 0
+epochs: 10
+batch_size: 8
+T: 16
+model: spikingresformer_dvsg
+dataset: DVS128Gesture
+augment: augment
+mixup: True
+cutout: False
+label_smoothing: 0.1
+workers: 16
+lr: 1e-4
+optimizer: adamw
+weight_decay: 0.05
+input_size: [3, 64, 64]
+num_classes: 11
+
+TET: False
+TET_phi: 1.0
+TET_lambda: 0.0
+
+save_latest: False
+test_only: False
+amp: True
+sync_bn: False

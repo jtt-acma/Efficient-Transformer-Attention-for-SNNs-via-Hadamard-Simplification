@@ -1,0 +1,7 @@
+# Minimal config for SpikingResformer DSSA T4 L4
+T: 16
+num_classes: 11
+input_size: [2, 64, 64]
+c_in: 2
+batch_size: 16
+num_workers: 4

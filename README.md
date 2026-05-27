@@ -1,1 +1,0 @@
-# Efficient-Transformer-Attention-for-SNNs-via-Hadamard-Simplification
